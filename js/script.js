@@ -44,7 +44,7 @@ var app = new Vue ({
            }
     },
 
-       textTrought(){
+       textTrought(indexType){
             if(this.todos.done === false){
                 this.todos.done = true
             }else{

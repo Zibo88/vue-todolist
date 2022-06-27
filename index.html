@@ -21,7 +21,7 @@
 
             <ul class="to-do-list">
 
-               <li @click="textTrought()" v-for="element in todos" :class="{'todo-done' : element.done === true}"> {{element.text}}
+               <li v-for="(element, index) in todos" :class="{'todo-done' : element.done === true}" @click="textTrought(index)" > {{element.text}}
                 
                         <span >
                             <i @click="remove()" class="fa fa-times" aria-hidden="true"></i>
