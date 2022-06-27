@@ -19,34 +19,44 @@
 var app = new Vue ({
     el: '#root',
     data: {
-       currentElement : 0,
-        todo: [
+       newToDoElement: '',
+        todos: [
             
             {
-                text: '',
+                text:'',
                 done: false,
-            }
-           
+            },
+
         ]
     },
-    methods: {
+     methods: {
       
-        addToDo(){
-            this.todo.push(this.todo.text)
-        },
+         addToDo(){
+           if(this.newToDoElement.length > 0){
+             
+            this.todos.push( {
+                text: this.newToDoElement,
+                done: false,
+            })
 
-        textTrought(){
-            if(this.todo.done === false){
-                this.todo.done = true
+            this.newToDoElement = '';
+          
+           }
+    },
+
+       textTrought(){
+            if(this.todos.done === false){
+                this.todos.done = true
             }else{
-                this.todo.done = false
-            }
-        },
+                this.todos.done = false
+         }
+       },
 
-        remove(){
-            todo.text.splice(currentElement, 0)
-        }
-    }
+         remove(){
+         this.todos.splice(0, 1)
+    },
+   }
+})
+   
 
     
-})

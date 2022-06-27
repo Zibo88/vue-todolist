@@ -15,18 +15,18 @@
         <div class="list-container">
             <div class="input-container">
 
-                <input v-model="todo.text" type="text">
+                <input v-model="newToDoElement" @keyup.enter="addToDo()"  type="text">
                 <button @click="addToDo()"> Aggiungi</button>
             </div>
 
             <ul class="to-do-list">
 
-               <li @click="textTrought" v-for="elememt in todo" :class="{'todo-done' : todo.done === true}"> {{todo.text}
-                   <div>
-                        <span @click="remove">
-                            <i class="fa fa-times" aria-hidden="true"></i>
+               <li @click="textTrought()" v-for="element in todos" :class="{'todo-done' : element.done === true}"> {{element.text}}
+                
+                        <span >
+                            <i @click="remove()" class="fa fa-times" aria-hidden="true"></i>
                         </span>
-                    </div> 
+                   
                </li>
                
             </ul>
