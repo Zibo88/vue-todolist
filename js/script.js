@@ -45,10 +45,10 @@ var app = new Vue ({
     },
 
        textTrought(indexType){
-            if(this.todos.done === false){
-                this.todos.done = true
+            if(this.todos[indexType].done === false){
+                this.todos[indexType].done = true
             }else{
-                this.todos.done = false
+                this.todos[indexType].done = false
          }
        },
 
